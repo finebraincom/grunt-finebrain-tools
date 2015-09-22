@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/finebraincom/grunt-finebrain-tools/issues"
   },
-  "homepage": "https://github.com/finebraincom/grunt-finebrain-tools#readme"
+  "homepage": "https://github.com/finebraincom/grunt-finebrain-tools#readme",
+  "dependencies": {
+    "async": "^1.4.2",
+    "underscore": "^1.8.3"
+  }
 }
