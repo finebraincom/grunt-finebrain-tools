@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 	*	Configuration options:
 	*	{
 	*		appDir : 'path/2/phonegap/app/dir',
-	*		cacheDir : 'path/2/[honegap/plugins/cache/dir'
+	*		cacheDir : 'path/2/phonegap/plugins/cache/dir',
+    *		phonegap : 'path/2/bin/phonegap',
 	*		plugins : [
 	*			{
 	*				id : "id of the plugin",
@@ -25,7 +26,7 @@ module.exports = function(grunt) {
 	*	}
 	*/
     grunt.registerMultiTask(
-    	"phonegap-plugins-install", 
+    	"phonegap-plugins-install",
     	"install required phonegap plugins with local caching of plugins",
     	function(){
     		var done = this.async(),
@@ -47,14 +48,14 @@ module.exports = function(grunt) {
 					var cachedPath = path.join(cfg.cacheDir, plugin.id);
 
 					var installFromCache = function(cb){
-						var cmd = "../node_modules/.bin/phonegap plugin add " + "../" + cachedPath;
+						var cmd = cfg.phonegap + " plugin add " + cachedPath;
 						exec(cmd, {cwd : cfg.appDir },function(err, stdout, stderr){
 							if(err){
 								return cb(err);
 							}
 							grunt.log.writeln('installed from cache: ' + plugin.id);
-							cb();				
-						});	
+							cb();
+						});
 					};
 
 					if(!grunt.file.exists(cachedPath)){
@@ -90,7 +91,7 @@ module.exports = function(grunt) {
 					if(err){
 						console.log(err);
 						grunt.fail.warn(err);
-					}					
+					}
 					grunt.log.ok('plugins installed');
 					done();
 				}
