@@ -1,0 +1,23 @@
+{
+  "name": "grunt-finebrain-tools",
+  "version": "1.0.0",
+  "description": "Tools for building Grunt projects",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finebraincom/grunt-finebrain-tools.git"
+  },
+  "keywords": [
+    "grunt",
+    "build"
+  ],
+  "author": "Iurii Kyian <iurii.kyian@insights.md>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finebraincom/grunt-finebrain-tools/issues"
+  },
+  "homepage": "https://github.com/finebraincom/grunt-finebrain-tools#readme"
+}
